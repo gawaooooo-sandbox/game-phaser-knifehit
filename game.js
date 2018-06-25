@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
         type: Phaser.CANVAS,
         width: 750,
         height: 1334,
+        parent: 'container',
         backgroundColor: 0x444444,
         scene: [playGame]
     };
@@ -85,6 +86,7 @@ class playGame extends Phaser.Scene {
         // player can't throw anymore
         this.canThrow = false;
 
+        console.log(`${this.target.y} と ${this.target.width / 2}`);
         // tween to throw the knife
         this.tweens.add({
             // adding the knife to tween targets
